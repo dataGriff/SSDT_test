@@ -13,4 +13,25 @@
     <Property Name="NewSchema" Value="dbo" />
     <Property Name="IsNewSchemaExternal" Value="True" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="94d539da-574e-481f-b2ea-8531b98571ce" ChangeDateTime="02/06/2016 16:26:18">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[CalendarYear]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CalendarYear1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4750229f-42c4-4687-9a08-8df3361038ac" ChangeDateTime="02/06/2016 16:27:24">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[CalendarYear1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CalendarYear" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4c178ec8-fdd7-46a8-8e46-81c853ff1b35" ChangeDateTime="02/06/2016 16:29:07">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[CalendarYear]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CalendarYear1" />
+  </Operation>
 </Operations>
