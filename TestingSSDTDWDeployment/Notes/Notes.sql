@@ -9,4 +9,6 @@ Don't forget I want triggers to fire so need select this option on in publishing
 
 If add column with NOT NULL will fail deployment as will be empty and violate constraint
 Add a default constraint (which will do anyway) and all is well...
+
+This line was to test source control
 */
