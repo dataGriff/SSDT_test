@@ -1,4 +1,4 @@
-﻿CREATE TABLE [import].[DimDate]
+﻿CREATE TABLE [dbo].[DimDate]
 (
 	[DateKey] INT NOT NULL PRIMARY KEY, 
     [Date] DATE NOT NULL, 

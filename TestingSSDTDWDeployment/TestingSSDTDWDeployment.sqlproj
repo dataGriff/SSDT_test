@@ -73,5 +73,6 @@
     <None Include="Notes\Notes.sql" />
     <None Include="TestingSSDTDWDeployment.publish.xml" />
     <None Include="Tables\DimDateExtendedProperties.sql" />
+    <None Include="Notes\SnippetTester.sql" />
   </ItemGroup>
 </Project>

@@ -7,4 +7,10 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="DateKey" />
   </Operation>
+  <Operation Name="Move Schema" Key="1a16a7c3-62bf-4448-b40e-5a13507f842f" ChangeDateTime="02/06/2016 16:03:57">
+    <Property Name="ElementName" Value="[import].[DimDate]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="dbo" />
+    <Property Name="IsNewSchemaExternal" Value="True" />
+  </Operation>
 </Operations>
