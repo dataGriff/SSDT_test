@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[DimTest]
+(
+	[Id] INT NOT NULL PRIMARY KEY 
+)

@@ -10,9 +10,11 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
+--this is an example of the syntax
 --:r ".\CustomerType.merge.data.sql"
 
 :r ".\Tables\DimDateExtendedProperties.sql"
+:r ".\PopulatingScripts\MergeDateData.sql"
 GO
 
 
