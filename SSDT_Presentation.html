@@ -7,33 +7,33 @@
 </head>
 <body>
     <h1>SQL Server Data Tools</h1>
-    <div id="1" class="page">
+    <div id="overview" class="page">
         <h2>Overview</h2>
-            <ul>
+            <ol>
                 <li>What is SQL Server Data Tools?</li>
                 <li>Create a SQL Server Database Project</li>
-                <li>Object Explorer &Aacute; Server Explorer</li>
+                <li>Server Explorer &amp; Object Explorer</li>
                 <li>Create a Table</li>
-                <li>Debugging &Aacute; the LocalDB</li>
+                <li>Debugging &amp; the LocalDB</li>
                 <li>Publishing Databases</li>
-                <li>Changing Objects &Aacute; Publishing</li>
+                <li>Changing Objects &amp; Publishing</li>
                 <li>Refactoring</li>
                 <li>Post-Deployment Scripts</li>
+                <li>Data Comparison</li>
                 <li>What is a dacpac?</li>
-                <li>"Operations - Please Publish my dacpac!"</li>
                 <li>Snapshots</li>
                 <li>Schema Comparison</li>
-                <li>Data Comparison</li>
                 <li>Referencing Databases</li>
+                <li>Import Databases</li>
                 <li>Unit Testing</li>
                 <li>Source Control</li>
                 <li>SQL Agile and Dev Pack</li>
                 <li>Summary</li>
                 <li>References and Links</li>
-            </ul>
+            </ol>
     </div>
 
-    <div id="2" class="page">
+    <div id="SSDT" class="page">
         <h2>What is SQL Server Data Tools (SSDT)?</h2>
         <ul>
             <li>Project based database development in visual studio</li>
@@ -50,7 +50,7 @@
         </ul>
     </div>
         
-    <div id="3" class="page">
+    <div id="createproject" class="page">
         <h2>Create a SQL Server Database Project</h2>
         <ul>
             <li>Open Visual Studio</li>
@@ -61,16 +61,149 @@
         </ul>
     </div>
 
-    <div id="4" class="page">
-        <h2>Object Explorer &Aacute; Server Explorert</h2>
+    <div id="serverobjectexplorer" class="page">
+        <h2>Server Explorer &amp; Object Explorer</h2>
+        <h3>Server Explorer</h3>
         <ul>
-            <li>Open Visual Studio</li>
-            <li>New Project</li>
-            <li>Templates</li>
-            <li>SQL Server</li>
-            <li>SQL Server Database Project</li>
+            <li>Visible in Solution Explorer Pane (View)</li>
+            <li>Shows data connections</li>
+            <li>Also other server configuration, logs and counters</li>
+        </ul>
+        <h3>SQL Server Object Explorer</h3>
+        <ul>
+            <li>There are connected and disconnected databases</li>
+            <li>Those under the projects folder are disconnected - this represents a local version of the database model</li>
+            <li>Under SQL Server the localdb is disconnected - this represents a local version of the database</li>
+            <li>Under SQL Server thosae that are not localdb are real servers and the databases are connected</li>
         </ul>
     </div>
+
+    <div id="createtable" class="page">
+        <h2>Create a Table</h2>
+        <ul>
+            <li>Right-click your project and select Add...</li>
+            <li>Lots of options - Choose Table</li>
+            <li>Template generated</li>
+            <li>Any changes in SQL or design pane are immediately reflected in the other</li>
+            <li>Can also create "SSMS-way" by creating table under projects</li>
+        </ul>
+    </div>
+
+    <div id="debugginglocaldb" class="page">
+        <h2>Debugging &amp; the LocalDB</h2>
+        <ul>
+            <li>When you debug the project it creates version of the database in localdb</li>
+            <li>You can add data to the database</li>
+            <li>You can locally test scripts without deploying anywhere</li>
+        </ul>
+    </div>
+
+    <div id="publishing" class="page">
+        <h2>Publishing Databases</h2>
+        <ul>
+            <li>To publish you right-click the project and select deploy</li>
+            <li>There are a number of settings you can change</li>
+            <li>You can generate the deployment script</li>
+            <li>You can also save the publishing profile for re-use</li>
+            <li>Publish to development first and set this as default deployment profile</li>
+            <li>You can copy and paste your publishing profile as starting templates for other locations</li>
+        </ul>
+    </div>
+
+    <div id="changepublishing" class="page">
+        <h2>Changing Objects &amp; Publishing</h2>
+        <ul>
+            <li>Add a column to the table</li>
+            <li>Debug to see the change go up to localdb</li>
+            <li>Publish to see the change go to the database</li>
+        </ul>
+        <h3>Integrity Error</h3>
+        <ul>
+            <li>Add a row of data to the live database table</li>
+            <li>Add a new column to the project table and specify NOT NULL</li>
+            <li>Trying to publish will create an integrity error as there is no data for that Non-Nullable column</li>
+            <li>Add a default value and then it will publish okay</li>
+            <li>You can then amend the live database</li>
+        </ul>
+    </div>
+
+    <div id="refactoring" class="page">
+        <h2>Refactoring</h2>
+        <ul>
+            <li>Rename the id column of the table</li>
+            <li>Change the data type of one of the columns</li>
+            <li>Look in the refactor log to see the recording of these changes</li>
+        </ul>
+    </div>
+
+    <div id="postdeploymentscripts" class="page">
+        <h2>Post-Deployment Scripts</h2>
+        <ul>
+            <li>Publish the changes made to the database</li>
+            <li>Copy and paste the publishing profile to create one for another copy of the database e.g. test</li>
+            <li>Publish the database - there is no data</li>
+            <li>Right-click and add a post deployment script to the project</li>
+            <li>You can only have one post deployment script, it does not itself contain SQL, but references other SQL files using SQLCMD</li>
+            <li>Add a script (not in build) to the solution and add suitable syntax to populate your table e.g. MERGE</li>
+            <li>Reference this script in your post deployment script</li>
+            <li>When you publish now the data will populate everywhere as it is part of your deployment</li>
+            <li>You could also put your populating scripts into stored procedures and reference their execution in your populating script</li>
+            <li>Post deployment scripts are also useful for adding extended properties</li>
+        </ul>
+    </div>
+
+    <div id="datacomparison" class="page">
+        <h2>Data Comparison</h2>
+        <ul>
+            <li>Tools > SQL Server > Data Comparison</li>
+            <li>Choose a data source and a data destination</li>
+            <li>Choose the objects you want to compare</li>
+            <li>You can see different records, those only in source, only in target and identical records</li>
+            <li>You can generate a script to update the data or just click update</li>
+            <li>You save comparison as a .dcmp file</li>
+        </ul>
+    </div>
+
+    <div id="dacpac" class="page">
+        <h2>What is a dacpac?</h2>
+        <ul>
+            <li>DAC - Data Tier Application</li>
+            <li>A DACPAC is a portable version of this data tier application</li>
+            <li>When you build a database project the file with the .dacpac extension gets created in the binn folder</li>
+            <li>Databases can be deployed from dacpacs so they are good for performing releases</li>
+        </ul>
+    </div>
+
+    <div id="snapshot" class="page">
+        <h2>Snapshots</h2>
+        <ul>
+            <li>Right-click project and select snapshot project</li>
+            <li>Creates a versioned dacpac at this point in time</li>
+            <li>Quick and useful way to create build versions of your database, that could also be used for schema comparison...</li>
+        </ul>
+    </div>
+
+    <div id="schemacomparison" class="page">
+        <h2>Schema Comparison</h2>
+        <ul>
+            <li>Tools > SQL Server > Schema Comparison</li>
+            <li>Choose a data source and a data destination, which can be a database, a project or a dacpac</li>
+            <li>You can generate a script to update the schema or just click update</li>
+            <li>You save comparison as a .scmp file</li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
