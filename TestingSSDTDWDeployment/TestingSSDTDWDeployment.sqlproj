@@ -46,6 +46,7 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -60,19 +61,59 @@
     <Folder Include="Tables" />
     <Folder Include="Schema" />
     <Folder Include="Notes" />
+    <Folder Include="PopulatingScripts" />
+    <Folder Include="Reference Master Scripts which break originally" />
+    <Folder Include="Snapshots" />
+    <Folder Include="ScriptPresentationOrder" />
+    <Folder Include="Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\DimDate.sql" />
     <Build Include="Schema\import.sql" />
     <PostDeploy Include="PostScripts.sql" />
+    <Build Include="Reference Master Scripts which break originally\ReturnSysJobsFromMSDB.sql" />
+    <None Include="ScriptPresentationOrder\06_TBL_DimDate.sql" />
+    <None Include="ScriptPresentationOrder\07_SCR_PopulateDateData.sql" />
+    <Build Include="Stored Procedures\pr_DimDate.sql" />
+    <None Include="ScriptPresentationOrder\08_SCR_PostScripts.sql" />
+    <None Include="ScriptPresentationOrder\12_SCR_PostScripts.sql" />
+    <None Include="ScriptPresentationOrder\10_SCR_PopulateDateData.sql" />
+    <None Include="ScriptPresentationOrder\11_SCR_pr_DimDateExtendedProperties.sql" />
+    <Build Include="Stored Procedures\pr_HeapCheck.sql" />
+    <Build Include="Tables\Heap.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="TestingSSDTDWDeployment.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Notes\Notes.sql" />
-    <None Include="TestingSSDTDWDeployment.publish.xml" />
+    <None Include="Publish.Live.TestingSSDTDWDeployment.publish.xml" />
     <None Include="Tables\DimDateExtendedProperties.sql" />
     <None Include="Notes\SnippetTester.sql" />
+    <None Include="Publish.Test.TestingSSDTDWDeployment.publish.xml" />
+    <None Include="Publish.Dev.TestingSSDTDWDeployment.publish.xml" />
+    <None Include="PopulatingScripts\PopulateDateData.sql" />
+    <None Include="Notes\OrderPresentation.sql" />
+    <None Include="Snapshots\TestingSSDTDWDeployment_20160207_14-47-33.dacpac" />
+    <None Include="ScriptPresentationOrder\02_TBL_DimDate.sql" />
+    <None Include="ScriptPresentationOrder\03_TBL_DimDate.sql" />
+    <None Include="ScriptPresentationOrder\04_TBL_DimDate.sql" />
+    <None Include="ScriptPresentationOrder\05_TBL_DimDate.sql" />
+    <None Include="ScriptPresentationOrder\01_SCH_import.sql" />
+    <None Include="ScriptPresentationOrder\09_PRC_pr_DimDate.sql" />
+    <None Include="Stored Procedures\pr_DimDateExtendedProperties.sql" />
+    <None Include="ScriptPresentationOrder\13_PRC_pr_ReturnMSDBJobs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\msdb.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\msdb.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
 </Project>

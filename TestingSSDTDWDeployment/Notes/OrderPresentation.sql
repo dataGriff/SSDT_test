@@ -93,7 +93,8 @@
 --will break
 --add reference to system databases (Can be any database or project)
 --do select * again first and run code analysis
---change to certain columns
+--right click project > properties > look at rules in code analysis... show whats there...
+--change to certain columns - by highlighting - refactor and expand wildcards
 --publish everywhere
 
 --18.0 add extended properties to date and add to post scripts
@@ -111,6 +112,7 @@
 
 --23.0 Snapshot 
 
+--24.0 Run code analysis
 
 
 

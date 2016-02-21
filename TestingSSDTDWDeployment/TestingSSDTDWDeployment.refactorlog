@@ -34,4 +34,39 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="CalendarYear1" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="f7c95696-816f-456e-8835-a715e4566ba7" ChangeDateTime="02/06/2016 16:48:16">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[CalendarYear1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CalendarYear" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4330d5f9-9e65-4cca-8f21-b810a19065d5" ChangeDateTime="02/07/2016 10:39:12">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[DateKey]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DateKey1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="df64e1e6-1d35-4d8d-bb71-1e476d0aedf0" ChangeDateTime="02/07/2016 10:50:32">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[DateKey1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DateKey" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="81fbbea1-144e-49ae-8fbe-dfd417eed931" ChangeDateTime="02/07/2016 11:50:32">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[DateKey]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DateKey1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a21363f7-bddc-4fe5-9b34-24248fcc17eb" ChangeDateTime="02/07/2016 11:52:19">
+    <Property Name="ElementName" Value="[dbo].[DimDate].[DateKey1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DimDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DateKey" />
+  </Operation>
 </Operations>
