@@ -24,6 +24,7 @@
                 <li>Snapshots</li>
                 <li>Schema Comparison</li>
                 <li>Referencing Databases</li>
+                <li>Code Analysis</li>
                 <li>Import Databases</li>
                 <li>Unit Testing</li>
                 <li>Source Control</li>
@@ -58,6 +59,7 @@
             <li>Templates</li>
             <li>SQL Server</li>
             <li>SQL Server Database Project</li>
+            <li>Right-click your new project and choose properties to see what's available</li>
         </ul>
     </div>
 
@@ -193,8 +195,52 @@
         </ul>
     </div>
 
+    <div id="referencing" class="page">
+        <h2>Referencing Databases</h2>
+        <ul>
+            <li>Add a script that references another database</li>
+            <li>You will get an error on the build</li>
+            <li>Right-click project and add database reference</li>
+            <li>Project will now build fine</li>
+            <li>You will also see fully qualified names of these references objects in object explorer project</li>
+        </ul>
+    </div>
 
+    <div id="codeanalysis" class="page">
+        <h2>Code Analysis</h2>
+        <ul>
+            <li>Right-click your project and run code analysis</li>
+            <li>Warnings will come back - for example code with SELECT *</li>
+            <li>You can navigate to these errors and fix them (e.g. expand wild-cards on SELECT *)</li>
+            <li>To see the list of items in the code analysis see the project properties</li>
+        </ul>
+    </div>
 
+    <div id="importdatabase" class="page">
+        <h2>Import Database</h2>
+        <ul>
+            <li>You can add existing databases to a database project</li>
+            <li>Create a new project</li>
+            <li>Right-click and select import </li>
+            <li>You can choose from a database, dacpac or script</li>
+        </ul>
+    </div>
+
+    <div id="unittesting" class="page">
+        <h2>Unit Testing</h2>
+        <ul>
+            <li>You can add unit testing to your database code</li>
+            <li>Only in visual studio professional or higher</li>
+            <li>Right-click a procedure and select create unit test</li>
+            <li>Choose language and appropriate name for your test class</li>
+            <li>Choose database configuration and deployment properties e.g unit test after publish to ensure latest changes applied</li>
+            <li>Choose the test condition and add it. You can arrange test conditions in any order you like</li>
+            <li>You can be detailed with the test outcomes e.g. writing in the number of rows expected exactly</li>
+            <li>You can add multiple tests on the same procedure</li>
+            <li>Build the solution to ensure in test explorer and then run from there</li>
+            <li>If you cant see test window then go to Test > Windows > Test Explorer </li>
+        </ul>
+    </div>
 
 
 
